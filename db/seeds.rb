@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 business1 = Listing.new(name: 'Pawtraits Pte Ltd', phone: '88622211', address: '96 Yio Chu Kang Road
 ', postal_code: 545574, email:'pawtraits@gmail.com', description: 'Provides grooming and cleaning service for pets', price: 50, image_url: 'smth.url', home_service: true, aggressive_pets_accepted: true);
 business1.save
