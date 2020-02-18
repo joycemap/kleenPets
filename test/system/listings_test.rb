@@ -50,12 +50,12 @@ class ListingsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "destroying a Listing" do
+  test "deleteing a Listing" do
     visit listings_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "Delete", match: :first
     end
 
-    assert_text "Listing was successfully destroyed"
+    assert_text "Listing was successfully deleted"
   end
 end
