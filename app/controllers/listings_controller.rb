@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :delete]
+  before_action :authenticate_user!
+  before_action :set_listing, only: [ :edit, :update, :destroy]
 
   # GET /listings
   # GET /listings.json
@@ -10,11 +11,13 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    @listing = Listing.find(params[:id])
   end
 
   # GET /listings/new
   def new
     @listing = Listing.new
+    
   end
 
   # GET /listings/1/edit
@@ -25,7 +28,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
-
+    @listing.user = current_user
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
@@ -53,8 +56,9 @@ class ListingsController < ApplicationController
 
   # DELETE /listings/1
   # DELETE /listings/1.json
-  def delete
-    @listing.delete
+  def destroy
+    @listing.destroy
+    
     respond_to do |format|
       format.html { redirect_to listings_url, notice: 'Listing was successfully deleteed.' }
       format.json { head :no_content }
