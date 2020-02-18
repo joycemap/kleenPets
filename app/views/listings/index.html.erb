@@ -32,9 +32,18 @@
         <td><%= listing.image_url %></td>
         <td><%= human_boolean(listing.home_service) %></td>
         <td><%= human_boolean(listing.aggressive_pets_accepted) %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><button type="button" class="btn btn-warning">
+            <%= link_to 'Show', listing %>
+                </button></td>
+
+        <td><button type="button" class="btn btn-warning">
+            <%= link_to 'Edit', edit_listing_path(listing) %>
+                </button></td>
+
+        <td><button type="button" class="btn btn-warning">
+            <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </button></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +51,8 @@
 
 <br>
 
+<div>
+    <button type="button" class="btn btn-warning">
 <%= link_to 'New Listing', new_listing_path %>
+</button>
+</div>

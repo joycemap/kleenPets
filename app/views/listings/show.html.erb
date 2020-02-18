@@ -50,5 +50,10 @@
   <%= @listing.aggressive_pets_accepted %>
 </p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<button type="button" class="btn btn-warning">
+<%= link_to 'Edit', edit_listing_path(@listing) %>
+</button>
+
+<button type="button" class="btn btn-warning">
 <%= link_to 'Back', listings_path %>
+</button>

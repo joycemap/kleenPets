@@ -2,5 +2,10 @@
 
 <%= render 'form', listing: @listing %>
 
-<%= link_to 'Show', @listing %> |
+<button type="button" class="btn btn-warning">
+<%= link_to 'Show', @listing %>
+</button>
+
+<button type="button" class="btn btn-warning">
 <%= link_to 'Back', listings_path %>
+</button>
