@@ -8,6 +8,10 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <p class="error">
+  <%= show_errors(@user, :email) %>
+</p>
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -15,6 +19,10 @@
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
+
+    <p class="error">
+  <%= show_errors(@user, :password) %>
+</p>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
