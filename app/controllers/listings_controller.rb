@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_listing, only: [ :edit, :update, :destroy]
+  # before_action :set_listing, only: [ :edit, :update, :destroy]
 
   # GET /listings
   # GET /listings.json
@@ -22,6 +22,13 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
+    @listing = Listing.find(params[:id])
+    
+    if @listing.user == current_user
+      return
+    else
+      redirect_to @listing, notice: 'This listing cannot be edited. Please contact the owner of this listing.'
+    end
   end
 
   # POST /listings
@@ -43,8 +50,11 @@ class ListingsController < ApplicationController
   # PATCH/PUT /listings/1
   # PATCH/PUT /listings/1.json
   def update
+    @listing = Listing.find(params[:id])
+    if @listing.user == current_user
     respond_to do |format|
       if @listing.update(listing_params)
+        
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
         format.json { render :show, status: :ok, location: @listing }
       else
@@ -53,16 +63,21 @@ class ListingsController < ApplicationController
       end
     end
   end
+  end
 
   # DELETE /listings/1
   # DELETE /listings/1.json
   def destroy
+    @listing = Listing.find(params[:id])
+    if @listing.user == current_user
     @listing.destroy
-    
     respond_to do |format|
       format.html { redirect_to listings_url, notice: 'Listing was successfully deleteed.' }
       format.json { head :no_content }
     end
+  else
+    redirect_to @listing, notice: 'This Listing cannot be deleted. Please contact the owner of this listing. '
+  end
   end
 
   private
