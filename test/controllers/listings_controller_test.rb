@@ -38,7 +38,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to listing_url(@listing)
   end
 
-  test "should destroy listing" do
+  test "should delete listing" do
     assert_difference('Listing.count', -1) do
       delete listing_url(@listing)
     end
