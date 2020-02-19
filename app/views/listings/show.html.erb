@@ -42,12 +42,12 @@
 
 <p>
   <strong>Home service:</strong>
-  <%= @listing.home_service %>
+  <%= human_boolean(@listing.home_service) %>
 </p>
 
 <p>
   <strong>Aggressive pets accepted:</strong>
-  <%= @listing.aggressive_pets_accepted %>
+  <%= human_boolean(@listing.aggressive_pets_accepted) %>
 </p>
 
 <button type="button" class="btn btn-warning">
