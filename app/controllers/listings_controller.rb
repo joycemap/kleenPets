@@ -8,8 +8,15 @@ class ListingsController < ApplicationController
 
 
 def landingpage
+    if user_signed_in?
+    redirect_to '/all'
+else
+    return
+      end
+end
 
-  end
+
+
 
 def search
   # puts request.query_parameters

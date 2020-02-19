@@ -65,3 +65,6 @@ gem 'devise'
 gem 'jquery-rails'
 
 gem 'pg_search'
+
+# For Font Awesome icons https://github.com/bokmann/font-awesome-rails
+gem "font-awesome-rails"
