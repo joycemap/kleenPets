@@ -68,3 +68,6 @@ gem 'pg_search'
 
 # For Font Awesome icons https://github.com/bokmann/font-awesome-rails
 gem "font-awesome-rails"
+
+# Bootstrap  https://getbootstrap.com/docs/4.0/getting-started/download/#rubygems
+gem 'bootstrap', '~> 4.0.0'
