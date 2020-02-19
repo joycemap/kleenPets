@@ -1,7 +1,8 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
    before_action :set_listing, only: [:show, :edit, :update, :destroy]
-#Route '/all' listings#index
+
+   #Route '/all' listings#index
   # GET /listings
   # GET /listings.json
 
@@ -17,21 +18,15 @@ end
 
 
 
-
+def search
+  # puts request.query_parameters
+  @search_results_listings = Listing.search_by_listings(params[:query])
+  
+end
 
   def index
-
-    if params[:search]
-      # search for vet profiles using the model method `search_vet_profiles`
-      # passing in the search parameters, `params[:search]`
-      @search_params = params[:search]
-      @listings = Listing.search_listings(params[:search])
-
-    else
-      @search_params = ''
       @listings = Listing.all
-
-    end
+    
   end
 
   # GET /listings/1
@@ -114,6 +109,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:name, :phone, :address, :postal_code, :email, :description, :price, :image_url, :home_service, :aggressive_pets_accepted)
+      params.require(:listing).permit(:name, :phone, :address, :postal_code, :email, :description, :price, :image_url, :home_service, :aggressive_pets_accepted, :query)
     end
-end
+  end

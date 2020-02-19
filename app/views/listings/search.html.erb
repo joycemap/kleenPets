@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
-<div id="listings-table">
 <h1>Listings</h1>
+<%if @search_results_listings.empty?%>
+<h3>No result found</h3>
+<%else%>
 
 <table>
   <thead>
@@ -20,7 +22,7 @@
   </thead>
 
   <tbody>
-    <% @listings.each do |listing| %>
+    <% @search_results_listings.each do |listing| %>
       <tr>
         <td><%= listing.name %></td>
         <td><%= listing.phone %></td>
@@ -49,19 +51,16 @@
     <% end %>
   </tbody>
 </table>
-  </div>
-    <div id="search-results">
-</div>
-
+  <% end %>
 <br>
 
 <div>
     <button type="button" class="btn btn-warning">
 	<% if user_signed_in? %>
 		<%= link_to 'New Listing', new_listing_path %>
-		<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+		<%= link_to 'log out', destroy_user_session_url, method: :delete %>
 	<% else %>
-		<%= link_to 'Log in', new_user_session_url %>
+		<%= link_to 'log in', new_user_session_url %>
 <% end %>
       </button>
 </div>
