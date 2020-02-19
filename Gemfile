@@ -60,3 +60,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
+# For search function http://www.ryanmcmahon.org/articles/11
+gem 'jquery-rails'
+
+gem 'pg_search'
