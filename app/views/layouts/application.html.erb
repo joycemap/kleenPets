@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+  
     <title>KleenPets</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -22,24 +24,18 @@
       <a class="nav-item nav-link" href="#">Login</a>
     </div>
   </div>
-    <form class="form-inline">
-   <%= form_tag(listings_path, method: "get") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Enter search term" %>
-  <%= submit_tag "Search" %>
-<% end %>
-    <%
-=begin%>
- <input class="form-control mr-sm-2" type="search" input_tag :search, params[:search], placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search for Groomers</button> 
-<%
-=end%>
-  </form>
+ <form class="form-inline my-2 my-lg-0" action="/search" method="GET">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   
 </nav>
 
   </head>
 
   <body>
+  
     <%= yield %>
+  
   </body>
 </html>

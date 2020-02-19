@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root 'listings#landingpage'
   get '/all' => 'listings#index'
+  get '/search'  => 'listings#search'
 
 
 end

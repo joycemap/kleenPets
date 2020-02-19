@@ -1,7 +1,8 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
    before_action :set_listing, only: [:show, :edit, :update, :destroy]
-#Route '/all' listings#index
+
+   #Route '/all' listings#index
   # GET /listings
   # GET /listings.json
 
@@ -10,19 +11,19 @@ def landingpage
 
   end
 
-
+def search
+  puts request.query_parameters
+    @search_results_listings = Listing.search_by_listings(params[:query])
+    
+    # respond_to do |format|
+    #     format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
+    #     format.json { render :show, status: :created, location: @listing }
+    # end
+  end
 
   def index
-    
-    if params[:search]
-      @search_results_listings = Listing.search_listings(params[:search])
-      respond_to do |format|
-        format.js { render partial: 'search-results'}
-      end
-    else 
       @listings = Listing.all
-
-    end
+    
   end
 
   # GET /listings/1
@@ -105,6 +106,6 @@ def landingpage
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:name, :phone, :address, :postal_code, :email, :description, :price, :image_url, :home_service, :aggressive_pets_accepted, :search)
+      params.require(:listing).permit(:name, :phone, :address, :postal_code, :email, :description, :price, :image_url, :home_service, :aggressive_pets_accepted, :query)
     end
-end
+  end
