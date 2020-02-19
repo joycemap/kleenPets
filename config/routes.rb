@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/search'  => 'listings#search'
   # tentatively when customers sign in, it'll bring them to listings pages first. will change their routes to smth else
   get 'customers/:id' => 'listings#index'
+  
 
   get '/reviews' => 'reviews#index', as: 'reviews'
   get '/reviews/new' => 'reviews#new', as: 'new_review'

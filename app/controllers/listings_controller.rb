@@ -8,18 +8,20 @@ class ListingsController < ApplicationController
 
 
 def landingpage
+    if user_signed_in?
+    redirect_to '/all'
+else
+    return
+      end
+end
 
-  end
+
+
 
 def search
-  puts request.query_parameters
     @search_results_listings = Listing.search_by_listings(params[:query])
-
-    # respond_to do |format|
-    #     format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
-    #     format.json { render :show, status: :created, location: @listing }
-    # end
-  end
+  
+end
 
   def index
       @listings = Listing.all
