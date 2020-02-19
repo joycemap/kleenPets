@@ -33,15 +33,15 @@
         <td><%= human_boolean(listing.home_service) %></td>
         <td><%= human_boolean(listing.aggressive_pets_accepted) %></td>
 
-        <td><button type="button" class="btn btn-warning">
+        <td><button type="button" class="btn btn-info">
             <%= link_to 'Show', listing %>
                 </button></td>
 
-        <td><button type="button" class="btn btn-warning">
+        <td><button type="button" class="btn btn-info">
             <%= link_to 'Edit', edit_listing_path(listing) %>
                 </button></td>
 
-        <td><button type="button" class="btn btn-warning">
+        <td><button type="button" class="btn btn-info">
             <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
         </button></td>
 
@@ -56,7 +56,7 @@
 <br>
 
 <div>
-    <button type="button" class="btn btn-warning">
+    <button type="button" class="btn btn-info">
 	<% if user_signed_in? %>
 		<%= link_to 'New Listing', new_listing_path %>
 		<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
