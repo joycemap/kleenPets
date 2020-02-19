@@ -10,4 +10,12 @@ Rails.application.routes.draw do
   # tentatively when customers sign in, it'll bring them to listings pages first. will change their routes to smth else
   get 'customers/:id' => 'listings#index'
 
+  get '/reviews' => 'reviews#index', as: 'reviews'
+  get '/reviews/new' => 'reviews#new', as: 'new_review'
+  post '/reviews' => 'reviews#create'
+  get '/reviews/:id' => 'reviews#show' , as: 'review'
+  get '/reviews/:id/edit' => 'reviews#edit', as: 'edit_review'
+  patch '/reviews/:id' => 'reviews#update'
+  delete '/reviews/:id' => 'reviews#destroy'
+
 end
