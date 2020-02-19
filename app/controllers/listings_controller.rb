@@ -19,21 +19,24 @@ end
 
 
 def search
-  # puts request.query_parameters
-  @search_results_listings = Listing.search_by_listings(params[:query])
+    @search_results_listings = Listing.search_by_listings(params[:query])
   
 end
 
   def index
       @listings = Listing.all
-    
+
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
     @listing = Listing.find(params[:id])
+    # this line ensures that the you'll only see the reviews for the selected listings, you won't see all reviews of all listings
+    @reviews = @listing.reviews
   end
+
+
 
   # GET /listings/new
   def new
@@ -109,6 +112,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:name, :phone, :address, :postal_code, :email, :description, :price, :image_url, :home_service, :aggressive_pets_accepted, :query)
+      params.require(:listing).permit(:name, :phone, :address, :postal_code, :email, :description, :price, :image_url, :home_service, :aggressive_pets_accepted, :query, :user_id)
     end
   end

@@ -6,5 +6,5 @@ class Listing < ApplicationRecord
     using: {
       :tsearch => {:prefix => true}
     }
-
+    has_many :reviews
 end
