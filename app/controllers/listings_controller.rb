@@ -4,6 +4,14 @@ class ListingsController < ApplicationController
 
   # GET /listings
   # GET /listings.json
+
+
+def landingpage
+
+  end
+
+
+
   def index
     @listings = Listing.all
   end
@@ -17,13 +25,13 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
-    
+
   end
 
   # GET /listings/1/edit
   def edit
     @listing = Listing.find(params[:id])
-    
+
     if @listing.user == current_user
       return
     else
@@ -54,7 +62,7 @@ class ListingsController < ApplicationController
     if @listing.user == current_user
     respond_to do |format|
       if @listing.update(listing_params)
-        
+
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
         format.json { render :show, status: :ok, location: @listing }
       else
