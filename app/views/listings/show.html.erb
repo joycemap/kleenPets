@@ -50,6 +50,37 @@
   <%= human_boolean(@listing.aggressive_pets_accepted) %>
 </p>
 
+<p>
+	<strong>Reviews: </strong>
+</p>
+
+<ul>
+	<% @reviews.each do |review| %>
+		<li>
+			<%= review.body %>
+			Posted by <%= review.customer.email %> <%= time_ago_in_words(review.created_at) %> ago.
+			<td><%= link_to 'Delete', review_path(review), method: :delete, data: { confirm: 'Are you sure?' }
+			%></td>
+		</li>
+		<% end %>
+</ul>
+
+<%= form_with scope: :review, url: reviews_path, local: true do |form| %>
+<p>
+	Leave a review:
+	<%= form.label :body %>
+	<%= form.text_field :body %>
+</p>
+
+	<%= form.hidden_field :listing_id, value: @listing.id %>
+
+
+<p>
+	<%= form.submit %>
+</p>
+
+<% end %>
+
 <button type="button" class="btn btn-warning">
 <%= link_to 'Edit', edit_listing_path(@listing) %>
 </button>
