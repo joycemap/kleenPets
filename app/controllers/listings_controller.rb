@@ -12,14 +12,10 @@ def landingpage
   end
 
 def search
-  puts request.query_parameters
-    @search_results_listings = Listing.search_by_listings(params[:query])
-    
-    # respond_to do |format|
-    #     format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
-    #     format.json { render :show, status: :created, location: @listing }
-    # end
-  end
+  # puts request.query_parameters
+  @search_results_listings = Listing.search_by_listings(params[:query])
+  
+end
 
   def index
       @listings = Listing.all

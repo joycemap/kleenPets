@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h1>Listings</h1>
+<%if @search_results_listings.empty?%>
+<h3>No result found</h3>
+<%else%>
 
 <table>
   <thead>
@@ -48,7 +51,7 @@
     <% end %>
   </tbody>
 </table>
-
+  <% end %>
 <br>
 
 <div>
