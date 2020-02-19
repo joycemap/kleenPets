@@ -23,9 +23,18 @@
     </div>
   </div>
     <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search for Groomers</button>
+   <%= form_tag(listings_path, method: "get") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Enter search term" %>
+  <%= submit_tag "Search" %>
+<% end %>
+    <%
+=begin%>
+ <input class="form-control mr-sm-2" type="search" input_tag :search, params[:search], placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search for Groomers</button> 
+<%
+=end%>
   </form>
+  
 </nav>
 
   </head>

@@ -15,13 +15,11 @@ def landingpage
   def index
     
     if params[:search]
-      # search for vet profiles using the model method `search_vet_profiles`
-      # passing in the search parameters, `params[:search]`
-      @search_params = params[:search]
-      @listings = Listing.search_listings(params[:search])
-
+      @search_results_listings = Listing.search_listings(params[:search])
+      respond_to do |format|
+        format.js { render partial: 'search-results'}
+      end
     else 
-      @search_params = ''
       @listings = Listing.all
 
     end
@@ -107,6 +105,6 @@ def landingpage
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:name, :phone, :address, :postal_code, :email, :description, :price, :image_url, :home_service, :aggressive_pets_accepted)
+      params.require(:listing).permit(:name, :phone, :address, :postal_code, :email, :description, :price, :image_url, :home_service, :aggressive_pets_accepted, :search)
     end
 end
