@@ -7,20 +7,27 @@ class ListingsController < ApplicationController
 
 
 def landingpage
+    if user_signed_in?
+    redirect_to '/all'
+else
+    return
+      end
+end
 
-  end
+
+
 
 
 
   def index
-    
+
     if params[:search]
       # search for vet profiles using the model method `search_vet_profiles`
       # passing in the search parameters, `params[:search]`
       @search_params = params[:search]
       @listings = Listing.search_listings(params[:search])
 
-    else 
+    else
       @search_params = ''
       @listings = Listing.all
 

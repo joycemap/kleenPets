@@ -17,3 +17,13 @@
  /*
  *= require rails_bootstrap_forms
  */
+
+ /*
+ *= require font-awesome
+ */
+
+ .btn-warning {
+    background-color: #cd4175;
+    border: none;
+    color: white;
+}
