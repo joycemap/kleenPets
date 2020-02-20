@@ -16,11 +16,13 @@ else
 end
 
 
-
-
 def search
     @search_results_listings = Listing.search_by_listings(params[:query])
   
+end
+
+def home_service
+
 end
 
   def index
