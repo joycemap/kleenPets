@@ -62,20 +62,22 @@
 		<li>
 			<%= review.body %>
 			Posted by <%= review.customer.email %> <%= time_ago_in_words(review.created_at) %> ago.
-			<td><%= link_to "Edit", edit_review_path(@listing, review)%></td>
-			<td><%= link_to 'Delete', review_path(review), method: :delete, data: { confirm: 'Are you sure?' }
+			<td><%= link_to "Edit", edit_review_path(@listing, review) %></td>
+			<td><%= link_to 'Delete', review_path(@listing, review), method: :delete, data: { confirm: 'Are you sure?' }
 			%></td>
 		</li>
 		<% end %>
 </ul>
 
 
-<%= form_with scope: :review, model: @review, local: true do |f| %>
+<%= form_with scope: :review, url: listing_reviews_path, local: true do |f| %>
 	<p>Add Review:
 		<%= f.text_area :body %>
-		</p>
-	<p><%= f.submit %></p>
-	<% end %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
 
 
 <button type="button" class="btn btn-warning">

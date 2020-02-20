@@ -57,24 +57,31 @@
 	<strong>Reviews: </strong>
 </p>
 
+<ul>
+	<% reviews = @reviews.select do |review| %>
+  	<% review != @review %>
+	<% end %>
+	<% reviews.each do |review| %>
+		<li>
+			<%= review.body %>
+			Posted by <%= review.customer.email %> <%= time_ago_in_words(review.created_at) %> ago.
+			<td><%= link_to "Edit", edit_review_path(@listing, review) %></td>
+			<td><%= #link_to 'Delete', review_path(review), method: :delete, data: { confirm: 'Are you sure?' }
+			%></td>
+		</li>
+		<% end %>
+</ul>
 
-<%= form_with scope: :review, url: reviews_path, local: true do |form| %>
-<p>
-	Edit a review:
-	<%= form.label :body %>
-	<%= form.text_field :body %>
-</p>
+<%= form_with scope: :review, model: @review, local: true do |form| %>
 
-	<%= form.hidden_field :listing_id, value: @listing.id %>
-
-
-<p>
-	<%= form.submit %>
-</p>
+  <p>Edit Review:
+		<%= form.text_area :body %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
 
 <% end %>
-
-
 
 <button type="button" class="btn btn-warning">
 
