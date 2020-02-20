@@ -39,12 +39,16 @@
             <%= link_to 'Show', listing %>
                 </button></td>
 
-        <td><button type="button" class="btn btn-warning">
+        <%
+=begin%>
+ <td><button type="button" class="btn btn-warning">
             <%= link_to 'Edit', edit_listing_path(listing) %>
                 </button></td>
 
         <td><button type="button" class="btn btn-warning">
-            <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %> 
+<%
+=end%>
         </button></td>
 
       </tr>
