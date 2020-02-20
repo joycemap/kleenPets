@@ -61,7 +61,7 @@
 	<% @reviews.each do |review| %>
 		<li>
 			<%= review.body %>
-			Posted by <%= review.customer.email %> <%= time_ago_in_words(review.created_at) %> ago.
+			Posted by <%= review.customer.email %> <%= time_ago_in_words(review.created_at) %> ago, updated on <%= time_ago_in_words(review.updated_at) %> ago.
 			<td><%= link_to "Edit", edit_review_path(@listing, review) %></td>
 			<td><%= link_to 'Delete', review_path(@listing, review), method: :delete, data: { confirm: 'Are you sure?' }
 			%></td>
