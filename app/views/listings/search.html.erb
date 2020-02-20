@@ -46,7 +46,7 @@
                 </button></td>
 
         <td><button type="button" class="btn btn-warning">
-            <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %> 
+            <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%
 =end%>
         </button></td>
@@ -59,12 +59,5 @@
 <br>
 
 <div>
-    <button type="button" class="btn btn-warning">
-	<% if user_signed_in? %>
-		<%= link_to 'New Listing', new_listing_path %>
-		<%= link_to 'log out', destroy_user_session_url, method: :delete %>
-	<% else %>
-		<%= link_to 'log in', new_user_session_url %>
-<% end %>
-      </button>
+
 </div>
