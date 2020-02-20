@@ -20,7 +20,7 @@ end
 
 def search
     @search_results_listings = Listing.search_by_listings(params[:query])
-  
+
 end
 
 def home_service
@@ -36,7 +36,7 @@ end
   # GET /listings/1.json
   def show
     @listing = Listing.find(params[:id])
-    # this line ensures that the you'll only see the reviews for the selected listings, you won't see all reviews of all listings
+    # this line @reviews = @listing.reviews ensures that the you'll only see the reviews for the selected listings, you won't see all reviews of all listings
     @reviews = @listing.reviews
   end
 
