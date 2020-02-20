@@ -23,14 +23,18 @@ def search
 
 end
 
-def home_service
-
-end
 
   def index
+    if  params[:home_service]
+      @home_service_params = params[:home_service]
+      @listings = Listing.where(home_service: true)
+    else
       @listings = Listing.all
-
+    end
   end
+
+
+
 
   # GET /listings/1
   # GET /listings/1.json
