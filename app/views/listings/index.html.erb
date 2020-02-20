@@ -9,7 +9,7 @@
 					<%= hidden_field_tag 'home_service', 'true' %>
 					<div class="input-group-append border-0">
 						<button class="btn btn-primary rounded" type="submit" disabled >
-							<i class="fas fa-filter mr-2"></i>24-hour Vets Only
+							<i class="fas fa-filter mr-2"></i>Home Service Only
 						</button>
 					</div>
 			</div>
@@ -18,7 +18,7 @@
 			<div class="input-group">
 					<div class="input-group-append border-0">
 						<button class="btn btn-primary rounded" type="submit">
-							<i class="fas fa-filter mr-2"></i>All Vets
+							<i class="fas fa-filter mr-2"></i>All Groomers
 						</button>
 					</div>
 			</div>
@@ -31,7 +31,7 @@
 					<%= hidden_field_tag 'home_service', 'true' %>
 					<div class="input-group-append border-0">
 						<button class="btn btn-primary rounded" type="submit">
-							<i class="fas fa-filter mr-2"></i>24-hour Vets Only
+							<i class="fas fa-filter mr-2"></i>Home Service Only
 						</button>
 					</div>
 			</div>
@@ -41,13 +41,13 @@
 			<div class="input-group">
 					<div class="input-group-append border-0">
 						<button class="btn btn-primary rounded" type="submit" disabled>
-							<i class="fas fa-filter mr-2"></i>All Vets
+							<i class="fas fa-filter mr-2"></i>All Groomers
 						</button>
 					</div>
 			</div>
 			<% end %>
 		<% end %>
-
+<br>
   <thead>
     <tr>
       <th>Name</th>
@@ -102,12 +102,5 @@
 <br>
 
 <div>
-    <button type="button" class="btn btn-info">
-	<% if user_signed_in? %>
-		<%= link_to 'New Listing', new_listing_path %>
-		<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
-	<% else %>
-		<%= link_to 'Log in', new_user_session_url %>
-<% end %>
-      </button>
+
 </div>
