@@ -15,7 +15,6 @@ def search
     @search_results_listings = Listing.search_by_listings(params[:query])
 end
 
-
   def index
     if  params[:home_service]
       @home_service_params = params[:home_service]
