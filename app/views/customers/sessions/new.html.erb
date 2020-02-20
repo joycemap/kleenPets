@@ -1,8 +1,9 @@
-
-<h2>Log In for Customers</h2>
-
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+</br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-left">
+        <h2>Log In for Customers</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -26,3 +27,10 @@
 <% end %>
 
 <%= render "customers/shared/links" %>
+    </div>
+
+    <div class="col">
+        <%= image_tag 'dog_closeup.jpg' , style: "width: 70%" %>
+    </div>
+  </div>
+</div>
