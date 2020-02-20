@@ -32,6 +32,19 @@
     color: #cd4175;
 }
 
+.app-name {
+    font-size: 14px;
+    font-color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.fa-paw {
+    margin: 8px;
+   cursor: pointer;
+}
+
 .navbar-brand {
     display: inline-block;
     padding-top: .3125rem;
@@ -45,7 +58,20 @@
 
 .navbar p, ol, ul, td {
     font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 17px;
 }
 
+/*.navbar ul:hover {
+  background-color: white;
+}
+*/
+
+.btn {
+    color: #CD4175;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
