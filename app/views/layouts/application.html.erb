@@ -11,38 +11,48 @@
     <%= javascript_include_tag 'application' %>
 
 
-<nav class="navbar navbar-expand-lg navbar-light text-light bg-info"><a class="navbar-brand text-light" href="/listings"><i class="fa fa-paw fa-lg" ></i> KleenPets</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+<nav class="navbar navbar-expand-lg navbar-light text-light bg-info">
+    <span class="navbar-brand text-light"></span><i class="fa fa-paw fa-3x"></i><a class="app-name" href="/listings"> KleenPets</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item nav-link text-light">Register</li>
+        <div></div>
 
-
+      <li class="nav-item nav-link text-light"></li>
     <% if user_signed_in? %>
     <li class="nav-item text-light">
         <%= hidden_field_tag 'Listings' %>
-        
- <!--        <%= link_to 'Listings', listings_path, class: "nav-link", class: 'nav-link' %> -->
+      
     </li>
     <li class="nav-item text-light">
         <%= link_to 'Log out', destroy_user_session_url, method: :delete, class: 'nav-link' %>
     </li>
         <% else %>
     <li class="nav-item text-light">
-        <%= link_to 'Log in [Groomers]', new_user_session_url, class: "nav-link" %>
+        <%= link_to 'Log in/Register (Groomers)', new_user_session_url, class: "nav-link" %>
     </li>
       <% end %>
 
+
+<% if customer_signed_in? %>
+    <li class="nav-item text-light">
+        <%= hidden_field_tag 'Listings' %>
+    </li>
+    <li class="nav-item text-light">
+        <%= link_to 'Log out', destroy_customer_session_url, method: :delete, class: 'nav-link' %>
+    </li>
+        <% else %>
+    <li class="nav-item text-light">
+        <%= link_to 'Log in/Register (Customers)', new_customer_session_url, class: "nav-link" %>
+    </li>
+      <% end %>
         </ul>
-
-
-
-
-      </div>
+</div>
 
  <form class="form-inline my-2 my-lg-0" action="/search" method="GET">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
