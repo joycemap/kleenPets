@@ -11,7 +11,7 @@
     <%= javascript_include_tag 'application' %>
 
 
-<nav class="navbar navbar-expand-lg navbar-light text-light bg-info"><a class="navbar-brand text-light"><i class="fa fa-paw fa-lg"></i> KleenPets</a>
+<nav class="navbar navbar-expand-lg navbar-light text-light bg-info"><a class="navbar-brand text-light" href="/listings"><i class="fa fa-paw fa-lg" ></i> KleenPets</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -25,6 +25,7 @@
     <% if user_signed_in? %>
     <li class="nav-item text-light">
         <%= hidden_field_tag 'Listings' %>
+        
  <!--        <%= link_to 'Listings', listings_path, class: "nav-link", class: 'nav-link' %> -->
     </li>
     <li class="nav-item text-light">
@@ -51,8 +52,18 @@
   </head>
 
   <body>
+  
+<%
+=begin%>
+https://stackoverflow.com/questions/4112103/devise-not-displaying-error-messge-during-an-authentication-failure
+ <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>  
+<%
+=end%>
 
     <%= yield %>
 
+ 
   </body>
 </html>

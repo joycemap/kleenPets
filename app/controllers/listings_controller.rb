@@ -9,7 +9,9 @@ class ListingsController < ApplicationController
 
 def landingpage
     if user_signed_in?
+    flash[:notice] =  "Signed in successfully."
     redirect_to '/all'
+   
 else
     return
       end
