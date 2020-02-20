@@ -5,5 +5,5 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reviews
   validates :email, uniqueness: true
-         validates :password, presence: true, length: { minimum: 6, maximum: 20 }
+  validates :password, presence: true, length: { minimum: 6, maximum: 20 }
 end
