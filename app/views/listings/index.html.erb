@@ -43,6 +43,14 @@
 			</div>
 			<% end %>
 		<% end %>
+    
+ <br>
+        <%= form_for "",url: listings_path, role: "minmax", method: :get do %>
+       <%= text_field_tag :searchp, @minmax_pricen_term,placeholder: "Min..." %>
+       <%= text_field_tag :searchpx, @minmax_pricex_term,placeholder: "Max..." %> 
+       <%= submit_tag "Submit" %>
+     <% end %> 
+
 <br>
   <thead>
     <tr>

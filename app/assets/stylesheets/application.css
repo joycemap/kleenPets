@@ -19,6 +19,7 @@
  /*
  *= require font-awesome
  */
+
  .btn-warning {
     background-color: #cd4175;
     border: none;
@@ -97,7 +98,8 @@
     color: white;
     text-align: left;
     margin-left: 20px;
-  
+}
+
 .form-check-input {
     margin-top: .5rem;
     margin-left: -1.25rem;
@@ -110,3 +112,9 @@
     font-size: inherit;
     line-height: inherit;
 }
+
+input[type="search"] {
+    font-size:10px;
+
+}
+
