@@ -7,8 +7,9 @@
 
 <p>
   <strong>Phone:</strong>
-  <%= @listing.phone %>
+  <%= link_to @listing.phone, "tel:#{@listing.phone}" %>
 </p>
+
 
 <p>
   <strong>Address:</strong>
