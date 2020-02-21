@@ -92,8 +92,21 @@
     margin-left: 20px;
 }
 
+
 .tagline{
     color: white;
     text-align: left;
     margin-left: 20px;
+  
+.form-check-input {
+    margin-top: .5rem;
+    margin-left: -1.25rem;
+    position: relative;
+}
+
+.button {
+    margin: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }

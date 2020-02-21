@@ -62,14 +62,15 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.image_url %></td>
+
         <td><%= listing.name %></td>
         <td><%= listing.phone %></td>
         <td><%= listing.address %></td>
         <td><%= listing.postal_code %></td>
         <td><%= listing.email %></td>
-        <td><%= listing.description %></td>
+        <td><%= listing.description %></td>x  
         <td><%= listing.price %></td>
+        <td><%= image_tag(url_for(listing.image_url)) %></td>
         <td><%= human_boolean(listing.home_service) %></td>
         <td><%= human_boolean(listing.aggressive_pets_accepted) %></td>
         <td><button type="button" class="btn btn-info">
