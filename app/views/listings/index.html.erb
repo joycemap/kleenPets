@@ -62,7 +62,7 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.image_url %></td>
+        <%= image_tag (url_for(listing.image_url)) %>
         <td><%= listing.name %></td>
         <td><%= listing.phone %></td>
         <td><%= listing.address %></td>
