@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Check us out:</strong>
+  <%= image_tag @listing.image_url %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @listing.name %>
 </p>
@@ -33,11 +38,6 @@
 <p>
   <strong>Price:</strong>
   <%= @listing.price %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @listing.image_url %>
 </p>
 
 <p>
