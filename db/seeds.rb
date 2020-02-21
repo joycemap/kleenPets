@@ -22,14 +22,13 @@ business5 = Listing.new(name: 'Paw Pte Ltd', phone: '88622211', address: '#01-11
 ', postal_code: '319064' email:'pawtraits@gmail.com', description: 'Provides grooming and cleaning service for pets', price: 50, image_url: 'https://i.picsum.photos/id/738/200/300.jpg', home_service: true, aggressive_pets_accepted: true);
 business1.save
 
-business6 = Listing.new(name: 'Sur Pet Grooming', phone: '88457183', address: 'Kensingston Square, 2 Jln Lokam, #01-21
-', postal_code: 537846, email: 'surrpawspetgrooming@gmail.com', description: 'Provides grooming and cleaning service for pets', price: 50, image_url: 'https://i.picsum.photos/id/1008/200/300.jpg', home_service: false, aggressive_pets_accepted: true);
+business6 = Listing.new(name: 'Sur Pet Grooming', phone: '88457184', address: 'Kensingston Square, 2 Jln Lokam #01-21', postal_code: 637846, email: 'surrpawspetgrooming@gmail.com', description: 'Provides grooming and cleaning service for pets', price: 50, image_url: 'https://i.picsum.photos/id/1008/200/300.jpg', home_service: false, aggressive_pets_accepted: true);
 business2.save
 
 business7 = Listing.new(name: 'Mich Pet Groomers', phone: '66948033', address: 'Esta Ruby #01-01, 500 Guillemard Rd
 ', postal_code: 399839, email: 'michikopetgroomers@gmail.com', description: 'Provides grooming and cleaning service for pets', price: 50, image_url: 'https://i.picsum.photos/id/115/200/300.jpg', home_service: true, aggressive_pets_accepted: false);
 business3.save
 
-business8 = Listing.new(name:  'Haven Grooming Salon', phone: '61009663', address: '7 Jasmine Rd,
-', postal_code: 576581, email: 'doghavengroomingsalon@gmail.com', description: 'Provides grooming and cleaning service for pets', price: 50, image_url: 'https://i.picsum.photos/id/938/200/300.jpg', home_service: true, aggressive_pets_accepted: true);
+business8 = Listing.new(name:  'Haven Grooming Salon', phone: '81009663', address: '7 Orchard Rd,
+', postal_code: 576581, email: 'havengroomingsalon@gmail.com', description: 'Provides grooming and cleaning service for pets', price: 50, image_url: 'https://i.picsum.photos/id/938/200/300.jpg', home_service: true, aggressive_pets_accepted: true);
 business4.save
