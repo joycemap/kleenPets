@@ -72,6 +72,7 @@
         <td><%= listing.price %></td>
         <td><%= human_boolean(listing.home_service) %></td>
         <td><%= human_boolean(listing.aggressive_pets_accepted) %></td>
+
         <td><button type="button" class="btn btn-info">
             <%= link_to 'Show', listing %>
                 </button></td>
@@ -85,7 +86,10 @@
     <% end %>
   </tbody>
 </table>
+
+
   </div>
+
 <div>
     <button type="button" class="btn btn-info">
     <% if user_signed_in? %>
@@ -96,6 +100,7 @@
 <% end %>
       </button>
 </div>
+
     <div id="search-results">
 </div>
 <br>
