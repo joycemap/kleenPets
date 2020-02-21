@@ -24,6 +24,7 @@
   <tbody>
     <% @search_results_listings.each do |listing| %>
       <tr>
+      <%= image_tag listing.image_url %>
         <td><%= listing.name %></td>
         <td><%= listing.phone %></td>
         <td><%= listing.address %></td>
@@ -31,7 +32,7 @@
         <td><%= listing.email %></td>
         <td><%= listing.description %></td>
         <td><%= listing.price %></td>
-        <td><%= listing.image_url %></td>
+        
         <td><%= human_boolean(listing.home_service) %></td>
         <td><%= human_boolean(listing.aggressive_pets_accepted) %></td>
 
