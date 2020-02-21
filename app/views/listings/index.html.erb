@@ -70,7 +70,12 @@
         <td><%= listing.email %></td>
         <td><%= listing.description %></td>x
         <td><%= listing.price %></td>
-        <td><%= image_tag(url_for(listing.image_url)) %></td>
+        <!-- <td><%= image_tag(url_for(listing.image_url)) %></td> -->
+
+
+<td><img src="<%=listing.image_url%>" width="auto" height="400" border="2"/></td>
+
+
         <td><%= human_boolean(listing.home_service) %></td>
         <td><%= human_boolean(listing.aggressive_pets_accepted) %></td>
         <td><button type="button" class="btn btn-info">
@@ -95,7 +100,7 @@
         <%= link_to 'log out', destroy_user_session_url, method: :delete %>
         </button>
     <% end %>
-     
+
 </div>
     <div id="search-results">
 </div>
