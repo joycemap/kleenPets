@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div id="listings-table">
 <h1>Listings</h1>
-
 <table>
 <% if @home_service_params == 'true' %>
 			<%= form_tag(listings_path, method: "get", local: true, class: "d-inline-block m-2") do %>
@@ -23,9 +22,7 @@
 					</div>
 			</div>
 			<% end %>
-
 		<% else %>
-
 			<%= form_tag(listings_path, method: "get", local: true, class: "d-inline-block m-2") do %>
 			<div class="input-group">
 					<%= hidden_field_tag 'home_service', 'true' %>
@@ -36,7 +33,6 @@
 					</div>
 			</div>
 			<% end %>
-
 			<%= form_tag(listings_path, method: "get", local: true, class: "d-inline-block m-2") do %>
 			<div class="input-group">
 					<div class="input-group-append border-0">
@@ -63,7 +59,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
@@ -75,24 +70,18 @@
         <td><%= listing.email %></td>
         <td><%= listing.description %></td>
         <td><%= listing.price %></td>
-
         <td><%= human_boolean(listing.home_service) %></td>
         <td><%= human_boolean(listing.aggressive_pets_accepted) %></td>
-
-
 
         <td><button type="button" class="btn btn-info">
             <%= link_to 'Show', listing %>
                 </button></td>
-
         <td><button type="button" class="btn btn-info">
             <%= link_to 'Edit', edit_listing_path(listing) %>
                 </button></td>
-
         <td><button type="button" class="btn btn-info">
             <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
         </button></td>
-
       </tr>
     <% end %>
   </tbody>
@@ -114,9 +103,6 @@
 
     <div id="search-results">
 </div>
-
 <br>
-
 <div>
-
 </div>
