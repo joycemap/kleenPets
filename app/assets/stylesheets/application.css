@@ -13,25 +13,20 @@
  *= require_tree .
  *= require_self
  */
-
  /*
  *= require rails_bootstrap_forms
  */
-
  /*
  *= require font-awesome
  */
-
  .btn-warning {
     background-color: #cd4175;
     border: none;
     color: white;
 }
-
 .fa {
     color: #cd4175;
 }
-
 .app-name {
     font-size: 14px;
     font-color: white;
@@ -39,13 +34,10 @@
     cursor: pointer;
     text-decoration: none;
 }
-
-
 .fa-paw {
     margin: 8px;
    cursor: pointer;
 }
-
 .navbar-brand {
     display: inline-block;
     padding-top: .3125rem;
@@ -55,24 +47,66 @@
     line-height: inherit;
     white-space: nowrap;
 }
-
-
 .navbar p, ol, ul, td {
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 14px;
     line-height: 17px;
 }
-
 /*.navbar ul:hover {
   background-color: white;
 }
 */
-
 .btn {
     color: #CD4175;
 }
-
-
 .navbar-light .navbar-nav .nav-link {
     color: white;
+}
+
+
+.form-check-input {
+    margin-top: .5rem;
+    margin-left: -1.25rem;
+    position: relative;
+}
+
+.button, .input, .optgroup, .select, .textarea {
+    margin: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.container-main {
+  top: 20%;
+  position: absolute;
+  z-index: 1;
+  left: 20;
+  color: white;
+}
+
+
+.display-4 {
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+
+
+.tagline{
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+  
+.form-check-input {
+    margin-top: .5rem;
+    margin-left: -1.25rem;
+    position: relative;
+}
+
+.button {
+    margin: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
