@@ -88,8 +88,8 @@
 </table>
   </div>
 <div>
-  
-    <% if user_signed_in? %>
+
+      <% if user_signed_in? %>
       <button type="button" class="btn btn-info">
         <%= link_to 'New Listing', new_listing_path %>
         <%= link_to 'log out', destroy_user_session_url, method: :delete %>
