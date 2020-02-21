@@ -14,3 +14,6 @@
 //= require activestorage
 //= require_tree .
 //= require jquery3
+//= require jquery
+
+//= require form_slider
