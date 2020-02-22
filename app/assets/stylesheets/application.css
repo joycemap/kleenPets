@@ -117,8 +117,14 @@ input[type="search"] {
     font-size:10px;
 }
 
+
 .card {
   margin: auto;
+}
+
+
+.form-control-lg {
+    width:250px !important;
 }
 
 
