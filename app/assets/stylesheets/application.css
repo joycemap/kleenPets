@@ -128,3 +128,10 @@ input[type="search"] {
 }
 
 
+.btn-secondary {
+    color: #fff;
+    background-color: #cd4175;
+    border-color: #cd4175;
+    margin-left: 20px;
+    float: left;
+}
