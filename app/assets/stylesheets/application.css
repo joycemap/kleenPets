@@ -29,7 +29,7 @@
     color: #cd4175;
 }
 .app-name {
-    font-size: 14px;
+    font-size: 18px;
     font-color: white;
     font-weight: bold;
     text-decoration: none;
@@ -50,7 +50,7 @@
 }
 .navbar p, ol, ul, td {
     font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 17px;
 }
 /*.navbar ul:hover {
@@ -114,7 +114,7 @@
 }
 
 input[type="search"] {
-    font-size:10px;
+    font-size:12px;
 }
 
 
@@ -130,8 +130,8 @@ input[type="search"] {
 
 .btn-secondary {
     color: #fff;
-    background-color: #cd4175;
-    border-color: #cd4175;
+    background-color: #57565f;
+    border-color: #57565f;
     margin-left: 20px;
     float: left;
 }
