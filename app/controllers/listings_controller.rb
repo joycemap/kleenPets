@@ -6,10 +6,17 @@
   # GET /listings.json
 def landingpage
     if user_signed_in?
-    redirect_to '/profiles'
+        @user = User.find(current_user.id)
+        @listings = Listing.where(user_id: current_user.id)
+        puts'*******'
+        puts @listings.length()
+        puts '******'
+        if @listings.length() != 0
+        redirect_to '/profiles'
 else
-    return
+        redirect_to '/listings/new'
       end
+    end
 end
 
 def search
@@ -33,14 +40,14 @@ end
 
   def profile
     puts current_user.id
-      if user_signed_in?
+      # if user_signed_in?
         @user = User.find(current_user.id)
         @listings = Listing.where(user_id: current_user.id)
         puts'*******'
         puts @listing
         puts '******'
         # @reviews = @listing.reviews
-    end
+    # end
   end
 
 
@@ -56,6 +63,7 @@ end
   def new
     @listing = Listing.new
   end
+
   # GET /listings/1/edit
   def edit
     @listing = Listing.find(params[:id])
@@ -65,6 +73,7 @@ end
       redirect_to @listing, notice: 'This listing cannot be edited. Please contact the owner of this listing.'
     end
   end
+
   # POST /listings
   # POST /listings.json
   def create
@@ -80,6 +89,7 @@ end
       end
     end
   end
+
   # PATCH/PUT /listings/1
   # PATCH/PUT /listings/1.json
   def update
@@ -96,6 +106,7 @@ end
     end
   end
   end
+
   # DELETE /listings/1
   # DELETE /listings/1.json
   def destroy
@@ -110,6 +121,8 @@ end
     redirect_to @listing, notice: 'This Listing cannot be deleted. Please contact the owner of this listing. '
   end
   end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
