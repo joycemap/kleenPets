@@ -32,12 +32,12 @@
     font-size: 14px;
     font-color: white;
     font-weight: bold;
-    cursor: pointer;
     text-decoration: none;
+    /*   cursor: pointer;*/
 }
 .fa-paw {
     margin: 8px;
-   cursor: pointer;
+/*   cursor: pointer;*/
 }
 .navbar-brand {
     display: inline-block;
@@ -117,8 +117,15 @@ input[type="search"] {
     font-size:10px;
 }
 
-
-
 .card {
   margin: auto;
+}
+
+
+.btn-secondary {
+    color: #fff;
+    background-color: #cd4175;
+    border-color: #cd4175;
+    margin-left: 20px;
+    float: left;
 }
