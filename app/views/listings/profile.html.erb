@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div id="listings-table">
 <h1>Listings</h1>
-<table>
+<table class="table">
 <% if @home_service_params == 'true' %>
 			<%= form_tag(listings_path, method: "get", local: true, class: "d-inline-block m-2") do %>
 			<div class="input-group">
@@ -44,21 +44,25 @@
 			<% end %>
 		<% end %>
 <br>
-  <thead>
+
+  <thead class="thead-light">
     <tr>
-      <th>Name</th>
-      <th>Phone</th>
-      <th>Address</th>
-      <th>Postal code</th>
-      <th>Email</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>See us</th>
-      <th>Home service</th>
-      <th>Aggressive pets accepted</th>
-      <th colspan="3"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">Postal code</th>
+      <th scope="col">Email</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">See us</th>
+      <th scope="col">Home service</th>
+      <th scope="col">Aggressive pets accepted</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
+
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
@@ -67,7 +71,7 @@
         <td><%= listing.address %></td>
         <td><%= listing.postal_code %></td>
         <td><%= listing.email %></td>
-        <td><%= listing.description %></td>x
+        <td><%= listing.description %></td>
         <td><%= listing.price %></td>
         <td><%= image_tag(url_for(listing.image_url)) %></td>
         <td><%= human_boolean(listing.home_service) %></td>
@@ -91,6 +95,8 @@
       <% if user_signed_in? %>
       <button type="button" class="btn btn-info">
         <%= link_to 'New Listing', new_listing_path %>
+        </button>
+      <button type="button" class="btn btn-info">
         <%= link_to 'log out', destroy_user_session_url, method: :delete %>
         </button>
     <% end %>
