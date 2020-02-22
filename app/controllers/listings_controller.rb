@@ -8,9 +8,12 @@ class ListingsController < ApplicationController
 def landingpage
     if user_signed_in?
         @user = User.find(current_user.id)
+        @useremail = User.where(email: current_user.email)
         @listings = Listing.where(user_id: current_user.id)
         puts'*******'
         puts @listings.length()
+        puts 'Qqwqwqwqwqwqwqwqwqw'
+        puts @useremail
         puts '******'
         if @listings.length() != 0
         redirect_to '/profiles'
@@ -44,12 +47,17 @@ end
       # if user_signed_in?
         @user = User.find(current_user.id)
         @listings = Listing.where(user_id: current_user.id)
+        # @useremail = User.find(email: current_user.email)
+        @user1 = current_user.id
+        @email = @user1.email
         puts'*******'
-        puts @listing
+        puts @listings
+        puts 'yyyyyyyyyyyyyy'
+        puts 'check'
+        puts @useremail
         puts '******'
         # @reviews = @listing.reviews
     # end
-
 
 end
 
