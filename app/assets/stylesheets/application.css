@@ -50,7 +50,7 @@
 }
 .navbar p, ol, ul, td {
     font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 17px;
 }
 /*.navbar ul:hover {
@@ -62,6 +62,7 @@
 }
 .navbar-light .navbar-nav .nav-link {
     color: white;
+    font-size: 14px;
 }
 
 

@@ -10,7 +10,7 @@
 					<%= hidden_field_tag 'home_service', 'true' %>
 					<div class="input-group-append border-0">
 						<button class="btn btn-primary rounded" type="submit" disabled >
-							<i class="fas fa-filter mr-2"></i>Home Service Only
+							<span class="fas fa-filter mr-2"> Home Service Only</span>
 						</button>
 					</div>
 			</div>
@@ -19,7 +19,7 @@
 			<div class="input-group">
 					<div class="input-group-append border-0">
 						<button class="btn btn-primary rounded" type="submit">
-							<i class="fas fa-filter mr-2"></i>All Groomers
+							<span class="fas fa-filter mr-2"> All Groomers</span>
 						</button>
 					</div>
 			</div>
@@ -30,7 +30,7 @@
 					<%= hidden_field_tag 'home_service', 'true' %>
 					<div class="input-group-append border-0">
 						<button class="btn btn-primary rounded" type="submit">
-							<i class="fas fa-filter mr-2"></i>Home Service Only
+							<span class="fas fa-filter mr-2"> Home Service Only</span>
 						</button>
 					</div>
 			</div>
@@ -39,7 +39,7 @@
 			<div class="input-group">
 					<div class="input-group-append border-0">
 						<button class="btn btn-primary rounded" type="submit" disabled>
-							<i class="fas fa-filter mr-2"></i>All Groomers
+							<span class="fas fa-filter mr-2"> All Groomers</span>
 						</button>
 					</div>
 			</div>
@@ -56,7 +56,7 @@
       <th scope="col">Email</th>
       <th scope="col">Description</th>
       <th scope="col">Price</th>
-      <th scope="col">See us</th>
+      <th scope="col">Photo</th>
       <th scope="col">Home service</th>
       <th scope="col">Aggressive pets accepted</th>
       <th scope="col"></th>
@@ -72,7 +72,7 @@
         <td><%= listing.phone %></td>
         <td><%= listing.address %></td>
         <td><%= listing.postal_code %></td>
-        <td><%= listing.email %></td>
+        <td><%= mail_to listing.email %></td>
         <td><%= listing.description %></td>
         <td><%= listing.price %></td>
         <td><%= image_tag(url_for(listing.image_url)) %></td>
