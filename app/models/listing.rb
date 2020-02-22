@@ -7,4 +7,5 @@ class Listing < ApplicationRecord
       :tsearch => {:prefix => true}
     }
     has_many :reviews
+    scope :between_range, -> (min, max) { where("price >= ? AND price <= ?", min, max) }
 end

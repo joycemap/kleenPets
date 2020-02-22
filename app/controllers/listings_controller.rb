@@ -1,21 +1,22 @@
   class ListingsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
-   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
    #Route '/all' listings#index
   # GET /listings
   # GET /listings.json
 def landingpage
     if user_signed_in?
-    redirect_to '/all'
+    redirect_to '/profiles'
 else
     return
       end
 end
+
 def search
     @search_results_listings = Listing.search_by_listings(params[:query])
 end
 
-  def index
+ def index
     if  params[:home_service]
       @home_service_params = params[:home_service]
       @listings = Listing.where(home_service: true)
@@ -24,7 +25,17 @@ end
     end
   end
 
-
+  def profile
+    puts current_user.id
+      if user_signed_in?
+        @user = User.find(current_user.id)
+        @listings = Listing.where(user_id: current_user.id)
+        puts'*******'
+        puts @listing
+        puts '******'
+        # @reviews = @listing.reviews
+    end
+  end
 
 
   # GET /listings/1
@@ -34,6 +45,17 @@ end
     # this line ensures that the you'll only see the reviews for the selected listings, you won't see all reviews of all listings
     @reviews = @listing.reviews
   end
+
+
+def minmax
+  if params[:searchp] && params[:searchpx] 
+    @minmax_pricen_term = params[:searchp]
+    @minmax_pricex_term = params[:searchpx] 
+    @listing = Listing.between_range(@minmax_pricen_term, @minmax_pricex_term)
+  end
+
+end
+
   # GET /listings/new
   def new
     @listing = Listing.new

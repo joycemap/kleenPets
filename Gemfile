@@ -69,4 +69,3 @@ gem "font-awesome-rails"
 
 # Bootstrap  https://getbootstrap.com/docs/4.0/getting-started/download/#rubygems
 gem 'bootstrap', '~> 4.3.1'
-
