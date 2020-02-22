@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # https://github.com/heartcombo/devise/wiki/How-to-Setup-Multiple-Devise-User-Models
   devise_for :customers, path: 'customers', controllers: { sessions: "customers/sessions", registrations: "customers/registrations", errors:"users/errors" }
   devise_for :users, path: 'users', controllers: { sessions: "users/sessions", registrations: "users/registrations", errors:"users/errors" }
+
   resources :listings
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
