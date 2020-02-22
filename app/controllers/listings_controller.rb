@@ -23,6 +23,11 @@ end
     else
       @listings = Listing.all
     end
+
+    if params[:searchp] || params[:searchpx] 
+      @search_pricen_term = params[:searchp]
+      @search_pricex_term = params[:searchpx] 
+      @listings = Listing.between_range(@search_pricen_term, @search_pricex_term)
   end
 
   def profile
@@ -45,16 +50,6 @@ end
     # this line ensures that the you'll only see the reviews for the selected listings, you won't see all reviews of all listings
     @reviews = @listing.reviews
   end
-
-
-def minmax
-  if params[:searchp] && params[:searchpx] 
-    @minmax_pricen_term = params[:searchp]
-    @minmax_pricex_term = params[:searchpx] 
-    @listing = Listing.between_range(@minmax_pricen_term, @minmax_pricex_term)
-  end
-
-end
 
   # GET /listings/new
   def new
