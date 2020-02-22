@@ -45,10 +45,11 @@
 		<% end %>
     
  <br>
-        <%= form_for "",url: listings_path, role: "minmax", method: :get do %>
-       <%= text_field_tag :searchp, @minmax_pricen_term,placeholder: "Min..." %>
-       <%= text_field_tag :searchpx, @minmax_pricex_term,placeholder: "Max..." %> 
-       <%= submit_tag "Submit" %>
+ <p><strong>Refine by price:</strong></p>
+        <%= form_for "",url: listings_path, role: "search", method: :get do %>
+       <%= text_field_tag :searchp, @search_pricen_term,placeholder: "Min..." %>
+       <%= text_field_tag :searchpx, @search_pricex_term,placeholder: "Max..." %> 
+       <%= submit_tag "Go" %>
      <% end %> 
 
 <br>
@@ -78,8 +79,6 @@
         <td><%= listing.email %></td>
         <td><%= listing.description %></td>x
         <td><%= listing.price %></td>
-        <!-- <td><%= image_tag(url_for(listing.image_url)) %></td> -->
-
 
 <td><img src="<%=listing.image_url%>" width="auto" height="400" border="2"/></td>
 
