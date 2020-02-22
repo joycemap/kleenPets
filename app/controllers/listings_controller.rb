@@ -28,6 +28,7 @@ def search
 end
 
  def index
+    @customer = Customer.find(current_customer.id)
     if  params[:home_service]
       @home_service_params = params[:home_service]
       @listings = Listing.where(home_service: true)
@@ -42,24 +43,6 @@ end
   end
 end
 
-  def profile
-    puts current_user.id
-      # if user_signed_in?
-        @user = User.find(current_user.id)
-        @listings = Listing.where(user_id: current_user.id)
-        # @useremail = User.find(email: current_user.email)
-        @user1 = current_user.id
-        @email = @user1.email
-        puts'*******'
-        puts @listings
-        puts 'yyyyyyyyyyyyyy'
-        puts 'check'
-        puts @useremail
-        puts '******'
-        # @reviews = @listing.reviews
-    # end
-
-end
 
   def profile
     puts current_user.id
@@ -154,4 +137,5 @@ end
     def listing_params
       params.require(:listing).permit(:name, :phone, :address, :postal_code, :email, :description, :price, :image_url, :home_service, :aggressive_pets_accepted, :query, :user_id)
     end
+
   end
