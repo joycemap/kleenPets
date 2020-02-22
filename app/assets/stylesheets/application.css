@@ -118,7 +118,13 @@ input[type="search"] {
 }
 
 
-
 .card {
   margin: auto;
 }
+
+
+.form-control-lg {
+    width:250px !important;
+}
+
+
