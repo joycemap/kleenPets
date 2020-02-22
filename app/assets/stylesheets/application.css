@@ -32,12 +32,12 @@
     font-size: 14px;
     font-color: white;
     font-weight: bold;
-    cursor: pointer;
     text-decoration: none;
+    /*   cursor: pointer;*/
 }
 .fa-paw {
     margin: 8px;
-   cursor: pointer;
+/*   cursor: pointer;*/
 }
 .navbar-brand {
     display: inline-block;

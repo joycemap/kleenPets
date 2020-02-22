@@ -1,4 +1,4 @@
-  class ListingsController < ApplicationController
+class ListingsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
    #Route '/all' listings#index
@@ -49,6 +49,7 @@ end
         puts '******'
         # @reviews = @listing.reviews
     # end
+
 
 end
 
