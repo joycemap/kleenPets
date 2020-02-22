@@ -54,7 +54,7 @@
 
 
 <button type="button" class="btn btn-info">
-=======
+
 <p>
 	<strong>Reviews: </strong>
 </p>
@@ -64,29 +64,40 @@
 		<li>
 			<%= review.body %>
 			Posted by <%= review.customer.email %> <%= time_ago_in_words(review.created_at) %> ago, updated on <%= time_ago_in_words(review.updated_at) %> ago.
+
+			 <% if customer_signed_in? %>
 			<td><%= link_to "Edit", edit_review_path(@listing, review) %></td>
 			<td><%= link_to 'Delete', review_path(@listing, review), method: :delete, data: { confirm: 'Are you sure?' }
 			%></td>
+			  <% end %>
 		</li>
 		<% end %>
 </ul>
 
+			 <% if customer_signed_in? %>
+					<%= form_with scope: :review, url: listing_reviews_path, local: true do |f| %>
+					<p>Add Review:
+						<%= f.text_area :body %>
+					</p>
+					<p>
+						<%= f.submit %>
+					</p>
+					<% end %>
+			 <% end %>
 
-<%= form_with scope: :review, url: listing_reviews_path, local: true do |f| %>
-	<p>Add Review:
-		<%= f.text_area :body %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
-<% end %>
 
+      <% if user_signed_in? %>
+      	<button type="button" class="btn btn-warning">
+					<%= link_to 'Edit', edit_listing_path(@listing) %>
+				</button>
 
-<button type="button" class="btn btn-warning">
+				<button type="button" class="btn btn-info">
+					<%= link_to 'Back', profile_path %>
+				</button>
+    	<% end %>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %>
-</button>
-
-<button type="button" class="btn btn-info">
-<%= link_to 'Back', listings_path %>
-</button>
+    	      <% if customer_signed_in? %>
+    	      	<button type="button" class="btn btn-info">
+								<%= link_to 'Back', listings_path %>
+							</button>
+    				<% end %>

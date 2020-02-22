@@ -62,7 +62,6 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
-
         <td><%= listing.name %></td>
         <td><%= listing.phone %></td>
         <td><%= listing.address %></td>
@@ -76,6 +75,12 @@
         <td><button type="button" class="btn btn-info">
             <%= link_to 'Show', listing %>
                 </button></td>
+        <td><button type="button" class="btn btn-info">
+            <%= link_to 'Edit', edit_listing_path(listing) %>
+                </button></td>
+        <td><button type="button" class="btn btn-info">
+            <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </button></td>
       </tr>
     <% end %>
   </tbody>
