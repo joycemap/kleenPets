@@ -31,15 +31,24 @@ end
       @listings = Listing.all
     end
 
-<<<<<<< HEAD
-    if 
-      params[:searchp] || params[:searchpx] 
-=======
     if params[:searchp] || params[:searchpx]
->>>>>>> 8f29a6b201833f7ef95792a280840fe4cc7d9bd7
       @search_pricen_term = params[:searchp]
       @search_pricex_term = params[:searchpx]
       @listings = Listing.between_range(@search_pricen_term, @search_pricex_term)
+  end
+end
+
+  def profile
+    puts current_user.id
+      # if user_signed_in?
+        @user = User.find(current_user.id)
+        @listings = Listing.where(user_id: current_user.id)
+        puts'*******'
+        puts @listing
+        puts '******'
+        # @reviews = @listing.reviews
+    # end
+
   end
 end
 
