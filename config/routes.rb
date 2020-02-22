@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   resources :listings
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get '/all' => 'listings#index'
+  get '/profiles' => 'listings#profile', as: 'profile'
+  # get '/newprofile' => 'listings#landingpage', as: 'newprofile'
+
+
+
   get '/search'  => 'listings#search'
   # tentatively when customers sign in, it'll bring them to listings pages first. will change their routes to smth else
   get 'customers/:id' => 'listings#index'

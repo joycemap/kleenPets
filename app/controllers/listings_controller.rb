@@ -1,21 +1,29 @@
   class ListingsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
-   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
    #Route '/all' listings#index
   # GET /listings
   # GET /listings.json
 def landingpage
     if user_signed_in?
-    redirect_to '/all'
+        @user = User.find(current_user.id)
+        @listings = Listing.where(user_id: current_user.id)
+        puts'*******'
+        puts @listings.length()
+        puts '******'
+        if @listings.length() != 0
+        redirect_to '/profiles'
 else
-    return
+        redirect_to '/listings/new'
       end
+    end
 end
+
 def search
     @search_results_listings = Listing.search_by_listings(params[:query])
 end
 
-  def index
+ def index
     if  params[:home_service]
       @home_service_params = params[:home_service]
       @listings = Listing.where(home_service: true)
@@ -23,12 +31,28 @@ end
       @listings = Listing.all
     end
 
+<<<<<<< HEAD
     if 
       params[:searchp] || params[:searchpx] 
+=======
+    if params[:searchp] || params[:searchpx]
+>>>>>>> 8f29a6b201833f7ef95792a280840fe4cc7d9bd7
       @search_pricen_term = params[:searchp]
-      @search_pricex_term = params[:searchpx] 
+      @search_pricex_term = params[:searchpx]
       @listings = Listing.between_range(@search_pricen_term, @search_pricex_term)
-    end
+  end
+end
+
+  def profile
+    puts current_user.id
+      # if user_signed_in?
+        @user = User.find(current_user.id)
+        @listings = Listing.where(user_id: current_user.id)
+        puts'*******'
+        puts @listing
+        puts '******'
+        # @reviews = @listing.reviews
+    # end
   end
 
   # GET /listings/1
@@ -43,6 +67,7 @@ end
   def new
     @listing = Listing.new
   end
+
   # GET /listings/1/edit
   def edit
     @listing = Listing.find(params[:id])
@@ -52,6 +77,7 @@ end
       redirect_to @listing, notice: 'This listing cannot be edited. Please contact the owner of this listing.'
     end
   end
+
   # POST /listings
   # POST /listings.json
   def create
@@ -67,6 +93,7 @@ end
       end
     end
   end
+
   # PATCH/PUT /listings/1
   # PATCH/PUT /listings/1.json
   def update
@@ -83,6 +110,7 @@ end
     end
   end
   end
+
   # DELETE /listings/1
   # DELETE /listings/1.json
   def destroy
@@ -97,6 +125,8 @@ end
     redirect_to @listing, notice: 'This Listing cannot be deleted. Please contact the owner of this listing. '
   end
   end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
