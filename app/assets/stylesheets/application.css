@@ -117,8 +117,15 @@ input[type="search"] {
     font-size:10px;
 }
 
-
-
 .card {
   margin: auto;
+}
+
+
+.btn-secondary {
+    color: #fff;
+    background-color: #cd4175;
+    border-color: #cd4175;
+    margin-left: 20px;
+    float: left;
 }
