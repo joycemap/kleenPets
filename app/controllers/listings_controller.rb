@@ -48,8 +48,21 @@ end
         puts '******'
         # @reviews = @listing.reviews
     # end
-  end
 
+  end
+end
+
+  def profile
+    puts current_user.id
+      # if user_signed_in?
+        @user = User.find(current_user.id)
+        @listings = Listing.where(user_id: current_user.id)
+        puts'*******'
+        puts @listing
+        puts '******'
+        # @reviews = @listing.reviews
+    # end
+  end
 
   # GET /listings/1
   # GET /listings/1.json
