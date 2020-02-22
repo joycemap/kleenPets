@@ -32,14 +32,13 @@ class ReviewsController < ApplicationController
     # @listing = Listing.find(params[:id])
     # @reviews = @listing.reviews
     @review = Review.find(params[:review_id])
-    @review.customer_id = current_customer.id
-    if @review.update(review_params)
+    if @review.customer_id == current_customer.id
+       @review.update(review_params)
       redirect_to @review.listing
     else
       render plain: "You can't edit reviews!"
     end
   end
-
 
 
   def destroy

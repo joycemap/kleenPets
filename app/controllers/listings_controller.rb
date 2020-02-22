@@ -1,21 +1,22 @@
   class ListingsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
-   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
    #Route '/all' listings#index
   # GET /listings
   # GET /listings.json
 def landingpage
     if user_signed_in?
-    redirect_to '/all'
+    redirect_to '/profiles'
 else
     return
       end
 end
+
 def search
     @search_results_listings = Listing.search_by_listings(params[:query])
 end
 
-  def index
+ def index
     if  params[:home_service]
       @home_service_params = params[:home_service]
       @listings = Listing.where(home_service: true)
@@ -27,6 +28,17 @@ end
       @search_pricen_term = params[:searchp]
       @search_pricex_term = params[:searchpx] 
       @listings = Listing.between_range(@search_pricen_term, @search_pricex_term)
+  end
+
+  def profile
+    puts current_user.id
+      if user_signed_in?
+        @user = User.find(current_user.id)
+        @listings = Listing.where(user_id: current_user.id)
+        puts'*******'
+        puts @listing
+        puts '******'
+        # @reviews = @listing.reviews
     end
   end
 
