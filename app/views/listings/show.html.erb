@@ -4,9 +4,20 @@
   <div class="card-body text">
     <h5 class="card-title"><%= @listing.name %></h5>
     <p class="card-text"><%= @listing.description %></p>
+
+<p>
+  <%= image_tag @listing.image_url %>
+</p>
+
+
 <p>
   <strong>Phone:</strong>
   <%= link_to @listing.phone, "tel:#{@listing.phone}" %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+<%= mail_to @listing.email %>
 </p>
 
 <p>
@@ -20,20 +31,10 @@
 </p>
 
 <p>
-  <strong>Email:</strong>
-<%= mail_to @listing.email %>
-</p>
-
-
-<p>
   <strong>Price:</strong>
   <%= @listing.price %>
 </p>
 
-<p>
-  <strong>Check us out:</strong>
-  <%= image_tag @listing.image_url %>
-</p>
 
 <p>
   <strong>Home service:</strong>
@@ -45,24 +46,36 @@
   <%= human_boolean(@listing.aggressive_pets_accepted) %>
 </p>
 
+
+      <% if user_signed_in? %>
+        <button type="button" class="btn btn-info">
+                    <%= link_to 'Edit', edit_listing_path(@listing) %>
+                </button>
+
+                <button type="button" class="btn btn-info">
+                    <%= link_to 'Back', profile_path %>
+                </button>
+        <% end %>
+
+              <% if customer_signed_in? %>
+                <button type="button" class="btn btn-info">
+                                <%= link_to 'Back', listings_path %>
+                            </button>
+                    <% end %>
+
   </div>
 </div>
 
 
 
-
-
-
-
-
-<button type="button" class="btn btn-info">
+<br>
+<button type="button" class="btn btn-light">
 
 <p>
     <strong>Reviews: </strong>
 </p>
 
 <ul>
-
 	<% @reviews.each do |review| %>
 		<li>
 			<%= review.body %>
@@ -87,20 +100,3 @@
 					</p>
 					<% end %>
 			 <% end %>
-
-
-      <% if user_signed_in? %>
-      	<button type="button" class="btn btn-warning">
-					<%= link_to 'Edit', edit_listing_path(@listing) %>
-				</button>
-
-				<button type="button" class="btn btn-info">
-					<%= link_to 'Back', profile_path %>
-				</button>
-    	<% end %>
-
-    	      <% if customer_signed_in? %>
-    	      	<button type="button" class="btn btn-info">
-								<%= link_to 'Back', listings_path %>
-							</button>
-    				<% end %>
