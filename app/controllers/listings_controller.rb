@@ -23,13 +23,13 @@ end
       @listings = Listing.all
     end
 
-    if params[:searchp] || params[:searchpx] 
+    if 
+      params[:searchp] || params[:searchpx] 
       @search_pricen_term = params[:searchp]
       @search_pricex_term = params[:searchpx] 
       @listings = Listing.between_range(@search_pricen_term, @search_pricex_term)
     end
   end
-
 
   # GET /listings/1
   # GET /listings/1.json
