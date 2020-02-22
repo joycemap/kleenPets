@@ -66,12 +66,10 @@
   </div>
 </div>
 
-
-
 <br>
-<button type="button" class="btn btn-light">
-
 <p>
+
+<button type="button" class="btn btn-outline-info">
     <strong>Reviews: </strong>
 </p>
 
@@ -80,6 +78,7 @@
 		<li>
 			<%= review.body %>
 			Posted by <%= review.customer.email %> <%= time_ago_in_words(review.created_at) %> ago, updated on <%= time_ago_in_words(review.updated_at) %> ago.
+</button>
 
 			 <% if customer_signed_in? %>
 			<td><%= link_to "Edit", edit_review_path(@listing, review) %></td>
