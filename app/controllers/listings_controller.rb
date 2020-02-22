@@ -46,6 +46,16 @@ end
     @reviews = @listing.reviews
   end
 
+
+def minmax
+  if params[:searchp] && params[:searchpx] 
+    @minmax_pricen_term = params[:searchp]
+    @minmax_pricex_term = params[:searchpx] 
+    @listing = Listing.between_range(@minmax_pricen_term, @minmax_pricex_term)
+  end
+
+end
+
   # GET /listings/new
   def new
     @listing = Listing.new

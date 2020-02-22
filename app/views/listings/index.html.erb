@@ -43,6 +43,14 @@
 			</div>
 			<% end %>
 		<% end %>
+    
+ <br>
+        <%= form_for "",url: listings_path, role: "minmax", method: :get do %>
+       <%= text_field_tag :searchp, @minmax_pricen_term,placeholder: "Min..." %>
+       <%= text_field_tag :searchpx, @minmax_pricex_term,placeholder: "Max..." %> 
+       <%= submit_tag "Submit" %>
+     <% end %> 
+
 <br>
   <thead>
     <tr>
@@ -70,7 +78,12 @@
         <td><%= listing.email %></td>
         <td><%= listing.description %></td>x
         <td><%= listing.price %></td>
-        <td><%= image_tag(url_for(listing.image_url)) %></td>
+        <!-- <td><%= image_tag(url_for(listing.image_url)) %></td> -->
+
+
+<td><img src="<%=listing.image_url%>" width="auto" height="400" border="2"/></td>
+
+
         <td><%= human_boolean(listing.home_service) %></td>
         <td><%= human_boolean(listing.aggressive_pets_accepted) %></td>
         <td><button type="button" class="btn btn-info">

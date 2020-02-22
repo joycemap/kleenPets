@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-
 <p>
   <strong>Name:</strong>
   <%= @listing.name %>
@@ -9,8 +7,9 @@
 
 <p>
   <strong>Phone:</strong>
-  <%= @listing.phone %>
+  <%= link_to @listing.phone, "tel:#{@listing.phone}" %>
 </p>
+
 
 <p>
   <strong>Address:</strong>
@@ -22,10 +21,12 @@
   <%= @listing.postal_code %>
 </p>
 
+
 <p>
   <strong>Email:</strong>
-  <%= @listing.email %>
+<%= mail_to @listing.email %>
 </p>
+
 
 <p>
   <strong>Description:</strong>
@@ -56,10 +57,11 @@
 <button type="button" class="btn btn-info">
 
 <p>
-	<strong>Reviews: </strong>
+    <strong>Reviews: </strong>
 </p>
 
 <ul>
+  
 	<% @reviews.each do |review| %>
 		<li>
 			<%= review.body %>
@@ -101,3 +103,35 @@
 								<%= link_to 'Back', listings_path %>
 							</button>
     				<% end %>
+  
+    <% @reviews.each do |review| %>
+        <li>
+            <%= review.body %>
+            Posted by <%= review.customer.email %> <%= time_ago_in_words(review.created_at) %> ago, updated on <%= time_ago_in_words(review.updated_at) %> ago.
+            <td><%= link_to "Edit", edit_review_path(@listing, review) %></td>
+            <td><%= link_to 'Delete', review_path(@listing, review), method: :delete, data: { confirm: 'Are you sure?' }
+            %></td>
+        </li>
+        <% end %>
+</ul>
+
+
+<%= form_with scope: :review, url: listing_reviews_path, local: true do |f| %>
+    <p>Add Review:
+        <%= f.text_area :body %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
+
+
+<button type="button" class="btn btn-warning">
+
+<%= link_to 'Edit', edit_listing_path(@listing) %>
+</button>
+
+<button type="button" class="btn btn-info">
+<%= link_to 'Back', listings_path %>
+</button>
+

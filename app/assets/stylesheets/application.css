@@ -19,6 +19,7 @@
  /*
  *= require font-awesome
  */
+
  .btn-warning {
     background-color: #cd4175;
     border: none;
@@ -93,7 +94,7 @@
 }
 
 
-.tagline{
+.tagline {
     color: white;
     text-align: left;
     margin-left: 20px;
@@ -111,3 +112,9 @@
     font-size: inherit;
     line-height: inherit;
 }
+
+input[type="search"] {
+    font-size:10px;
+
+}
+
