@@ -4,6 +4,7 @@
    #Route '/all' listings#index
   # GET /listings
   # GET /listings.json
+
 def landingpage
     if user_signed_in?
         @user = User.find(current_user.id)
@@ -49,7 +50,6 @@ end
         # @reviews = @listing.reviews
     # end
 
-  end
 end
 
   def profile
