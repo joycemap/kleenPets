@@ -41,6 +41,9 @@ end
       @search_pricex_term = params[:searchpx]
       @listings = Listing.between_range(@search_pricen_term, @search_pricex_term)
   end
+    if customer_signed_in?
+    @customer = Customer.find(current_customer.id)
+  end
 end
 
 
