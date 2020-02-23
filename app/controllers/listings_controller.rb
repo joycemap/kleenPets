@@ -28,7 +28,7 @@ def search
 end
 
  def index
-    @customer = Customer.find(current_customer.id)
+    # @customer = Customer.find(current_customer.id)
     if  params[:home_service]
       @home_service_params = params[:home_service]
       @listings = Listing.where(home_service: true)

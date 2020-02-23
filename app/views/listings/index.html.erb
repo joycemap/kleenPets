@@ -1,25 +1,26 @@
 <p id="notice"><%= notice %></p>
-<h1>hello <%= @customer.username %></h1>
 <div id="listings-table">
+
 <h1>Listings</h1>
-<table class="table">
+
+<div>
 <% if @home_service_params == 'true' %>
 			<%= form_tag(listings_path, method: "get", local: true, class: "d-inline-block m-2") do %>
 			<div class="input-group">
 					<%= hidden_field_tag 'home_service', 'true' %>
 					<div class="input-group-append border-0">
-						<button class="btn btn-primary rounded" type="submit" disabled >
-							<span class="fas fa-filter mr-2"> Home Service Only</span>
-						</button>
+                        <span>
+                            <button class="btn btn-info" type="submit" disabled>Home Service Only</button>
+                        </span>
 					</div>
 			</div>
 			<% end %>
 			<%= form_tag(listings_path, method: "get", local: true, class: "d-inline-block m-2") do %>
 			<div class="input-group">
 					<div class="input-group-append border-0">
-						<button class="btn btn-primary rounded" type="submit">
-							<span class="fas fa-filter mr-2"> All Groomers</span>
-						</button>
+                    <span>
+                        <button class="btn btn-info" type="submit">All Groomers</button>
+                    </span>
 					</div>
 			</div>
 			<% end %>
@@ -28,9 +29,9 @@
 			<div class="input-group">
 					<%= hidden_field_tag 'home_service', 'true' %>
 					<div class="input-group-append border-0">
-						<button class="btn btn-primary rounded" type="submit">
-							<span class="fas fa-filter mr-2"> Home Service Only</span>
-						</button>
+                      <span>
+                          <button class="btn btn-info" type="submit"> Home Service Only</button>
+                      </span>
 					</div>
 			</div>
 			<% end %>
@@ -38,9 +39,9 @@
 			<%= form_tag(listings_path, method: "get", local: true, class: "d-inline-block m-2") do %>
 			<div class="input-group">
 					<div class="input-group-append border-0">
-						<button class="btn btn-primary rounded" type="submit" disabled>
-							<span class="fas fa-filter mr-2"> All Groomers</span>
-						</button>
+                    <span>
+                        <button class="btn btn-info" type="submit" disabled>All Groomers</button>
+                    </span>
 					</div>
 			</div>
 			<% end %>
@@ -54,43 +55,47 @@
        <%= submit_tag "Go" %>
      <% end %>
 <br>
+<br>
 
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Address</th>
-      <th scope="col">Postal code</th>
-      <th scope="col">Email</th>
-      <th scope="col">Description</th>
-      <th scope="col">Price</th>
-      <th scope="col">Photo</th>
-      <th scope="col">Home service</th>
-      <th scope="col">Aggressive pets accepted</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.name %></td>
-        <td><%= listing.phone %></td>
-        <td><%= listing.address %></td>
-        <td><%= listing.postal_code %></td>
-        <td><%= mail_to listing.email %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.price %></td>
-        <td><img src="<%=listing.image_url%>" width="auto" height="200" border="2"/></td>
-        <td><%= human_boolean(listing.home_service) %></td>
-        <td><%= human_boolean(listing.aggressive_pets_accepted) %></td>
-        <td><button type="button" class="btn btn-info">
+<div class="container">
+    <div class="row">
+<% @listings.each do |listing| %>
+        <div class="col-lg-4 mb-2 text-center" >
+        <h4><%= listing.name %></h4>
+       <!--  <%= image_tag(url_for(listing.image_url)) %> -->
+       <img src="<%=listing.image_url%>" width="auto" height="250"/>
+        <br>
+        <br>
+        <h6><%= listing.description %></h6>
+        <p><strong>Address: <br></strong><%= listing.address %></p>
+        <p><strong>Postal code: </strong><%= listing.postal_code %></p>
+        <p><strong>Phone: </strong><%= listing.phone %></p>
+        <p><%= mail_to listing.email %></p>
+        <p><strong>Price: </strong><%= listing.price %></p>
+        <p><strong>Home service: </strong><%= human_boolean(listing.home_service) %></p>
+        <p><strong>Aggressive pets accepted: </strong><%= human_boolean(listing.aggressive_pets_accepted) %></p>
+        <span><button type="button" class="btn btn-info">
             <%= link_to 'Show', listing %>
-                </button></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                </button></span>
+        <span><button type="button" class="btn btn-info">
+            <%= link_to 'Edit', edit_listing_path(listing) %>
+                </button></span>
+        <span><button type="button" class="btn btn-info">
+            <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </button></span>
+        <br>
+        <br>
+        <br>
+        </div>
+      <% end %>
+    </div>
+</div>
+
+
+
+
+</div>
   </div>
 <div>
       <% if user_signed_in? %>

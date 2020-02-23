@@ -10,18 +10,18 @@
             <div class="input-group">
                     <%= hidden_field_tag 'home_service', 'true' %>
                     <div class="input-group-append border-0">
-                        <button class="btn btn-primary rounded" type="submit" disabled >
-                            <span class="fas fa-filter mr-2"> Home Service Only</span>
-                        </button>
+                        <span>
+                            <button class="btn btn-info" type="submit" disabled>Home Service Only</button>
+                        </span>
                     </div>
             </div>
             <% end %>
             <%= form_tag(listings_path, method: "get", local: true, class: "d-inline-block m-2") do %>
             <div class="input-group">
                     <div class="input-group-append border-0">
-                        <button class="btn btn-primary rounded" type="submit">
-                            <span class="fas fa-filter mr-2"> All Groomers</span>
-                        </button>
+                        <span>
+                         <button class="btn btn-info" type="submit">All Groomers</button>
+                        </span>
                     </div>
             </div>
             <% end %>
@@ -30,18 +30,18 @@
             <div class="input-group">
                     <%= hidden_field_tag 'home_service', 'true' %>
                     <div class="input-group-append border-0">
-                        <button class="btn btn-primary rounded" type="submit">
-                            <span class="fas fa-filter mr-2"> Home Service Only</span>
-                        </button>
+                        <span>
+                        <button class="btn btn-info" type="submit">Home Service Only</button>
+                        </span>
                     </div>
             </div>
             <% end %>
             <%= form_tag(listings_path, method: "get", local: true, class: "d-inline-block m-2") do %>
             <div class="input-group">
                     <div class="input-group-append border-0">
-                        <button class="btn btn-primary rounded" type="submit" disabled>
-                            <span class="fas fa-filter mr-2"> All Groomers</span>
-                        </button>
+                        <span>
+                        <button class="btn btn-info" type="submit" disabled>All Groomers</button>
+                        </span>
                     </div>
             </div>
             <% end %>
@@ -55,7 +55,9 @@
 <% @listings.each do |listing| %>
         <div class="col-lg-4 mb-2 text-center" >
         <h4><%= listing.name %></h4>
-        <%= image_tag(url_for(listing.image_url)) %>
+        <img src="<%=listing.image_url%>" width="auto" height="250"/>
+        <br>
+        <br>
         <h6><%= listing.description %></h6>
         <p><strong>Address: <br></strong><%= listing.address %></p>
         <p><strong>Postal code: </strong><%= listing.postal_code %></p>
@@ -73,10 +75,15 @@
         <span><button type="button" class="btn btn-info">
             <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
         </button></span>
+        <br>
+        <br>
+        <br>
         </div>
       <% end %>
     </div>
 </div>
+
+
 </div>
 </div>
 <div>
