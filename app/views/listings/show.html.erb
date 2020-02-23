@@ -2,8 +2,8 @@
 
 <div class="card " style="width: 18rem;">
   <div class="card-body text">
-    <h5 class="card-title"><%= @listing.name %></h5>
-    <p class="card-text"><%= @listing.description %></p>
+    <h5 class="card-title" id="listingname"><%= @listing.name %></h5>
+    <p class="card-text" id="description"><%= @listing.description %></p>
 
 <p>
   <%= image_tag @listing.image_url %>

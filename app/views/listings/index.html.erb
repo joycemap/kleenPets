@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <% if customer_signed_in? %>
-<h1>hello <%= @customer.username %></h1>
+<h1>Hello <%= @customer.username %></h1>
 <% end %>
 
 <div id="listings-table">
 
-<h1>Listings</h1>
+<br>
+<h2>List of Pet Groomers</h2>
 
 <div>
 <% if @home_service_params == 'true' %>
@@ -67,12 +68,11 @@
     <div class="row">
 <% @listings.each do |listing| %>
         <div class="col-lg-4 mb-2 text-center" >
-        <h4><%= listing.name %></h4>
-       <!--  <%= image_tag(url_for(listing.image_url)) %> -->
-       <img src="<%=listing.image_url%>" width="auto" height="250"/>
+        <h5 id="listingname"><%= listing.name %></h5>
+         <%= image_tag(url_for(listing.image_url)) %>
         <br>
         <br>
-        <h6><%= listing.description %></h6>
+        <p id="description"><%= listing.description %></p>
         <p><strong>Address: <br></strong><%= listing.address %></p>
         <p><strong>Postal code: </strong><%= listing.postal_code %></p>
         <p><strong>Phone: </strong><%= listing.phone %></p>
@@ -94,6 +94,7 @@
         <br>
         </div>
       <% end %>
+
     </div>
 </div>
 

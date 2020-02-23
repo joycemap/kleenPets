@@ -136,3 +136,16 @@ input[type="search"] {
     margin-left: 20px;
     float: left;
 }
+
+.col-lg-4 {
+    border: 1px solid grey;
+}
+
+#listingname {
+    color: #17A2B8;
+}
+
+#description {
+    color: grey;
+    font-style: italic;
+}
