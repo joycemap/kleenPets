@@ -28,7 +28,7 @@ def search
 end
 
  def index
-    @customer = Customer.find(current_customer.id)
+    # @customer = Customer.find(current_customer.id)
     if  params[:home_service]
       @home_service_params = params[:home_service]
       @listings = Listing.where(home_service: true)
@@ -40,6 +40,9 @@ end
       @search_pricen_term = params[:searchp]
       @search_pricex_term = params[:searchpx]
       @listings = Listing.between_range(@search_pricen_term, @search_pricex_term)
+  end
+    if customer_signed_in?
+    @customer = Customer.find(current_customer.id)
   end
 end
 

@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
+<% if customer_signed_in? %>
 <h1>hello <%= @customer.username %></h1>
+<% end %>
 <div id="listings-table">
 <h1>Listings</h1>
 <table class="table">
