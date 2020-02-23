@@ -64,15 +64,15 @@
         <p><strong>Price: </strong><%= listing.price %></p>
         <p><strong>Home service: </strong><%= human_boolean(listing.home_service) %></p>
         <p><strong>Aggressive pets accepted: </strong><%= human_boolean(listing.aggressive_pets_accepted) %></p>
-        <p><button type="button" class="btn btn-info">
+        <span><button type="button" class="btn btn-info">
             <%= link_to 'Show', listing %>
-                </button></p>
-        <p><button type="button" class="btn btn-info">
+                </button></span>
+        <span><button type="button" class="btn btn-info">
             <%= link_to 'Edit', edit_listing_path(listing) %>
-                </button></p>
-        <p><button type="button" class="btn btn-info">
+                </button></span>
+        <span><button type="button" class="btn btn-info">
             <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </button></p>
+        </button></span>
         </div>
       <% end %>
     </div>
