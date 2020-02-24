@@ -8,6 +8,7 @@ class Listing < ApplicationRecord
     }
 
     has_many :reviews
-
+    
+    # https://www.youtube.com/watch?v=SvcDjGEgCc4
     scope :between_range, -> (min, max) { where("price >= ? AND price <= ?", min, max) }
 end
