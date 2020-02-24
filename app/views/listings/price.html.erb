@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h1>Search result</h1>
-<%if @search_results_listings.empty?%>
+<%if @between_range.empty?%>
 <h3>No result found</h3>
 <%else%>
 
@@ -23,7 +23,7 @@
   </thead>
 
   <tbody>
-    <% @search_results_listings.each do |listing| %>
+    <% @between_range.each do |listing| %>
       <tr>
         <td><%= listing.name %></td>
         <td><%= listing.phone %></td>

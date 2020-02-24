@@ -27,6 +27,14 @@ def search
     @search_results_listings = Listing.search_by_listings(params[:query])
 end
 
+# def price 
+#   if params[:searchp] || params[:searchpx]
+#     @search_pricen_term = params[:searchp]
+#     @search_pricex_term = params[:searchpx]
+#     @between_range = Listing.between_range(@search_pricen_term, @search_pricex_term)
+#   end
+# end
+
  def index
     # @customer = Customer.find(current_customer.id)
     if  params[:home_service]

@@ -83,12 +83,14 @@
         <span><button type="button" class="btn btn-info">
             <%= link_to 'Show', listing %>
                 </button></span>
+           <% if user_signed_in? %>      
         <span><button type="button" class="btn btn-info">
             <%= link_to 'Edit', edit_listing_path(listing) %>
                 </button></span>
         <span><button type="button" class="btn btn-info">
             <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
         </button></span>
+         <% end %>
         <br>
         <br>
         <br>
@@ -107,7 +109,6 @@
       <% if user_signed_in? %>
       <button type="button" class="btn btn-info">
         <%= link_to 'New Listing', new_listing_path %>
-        <%= link_to 'log out', destroy_user_session_url, method: :delete %>
         </button>
     <% end %>
 
