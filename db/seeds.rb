@@ -26,6 +26,15 @@ business6.save
 
 business7 = Listing.new(name:  'MAD About Grooming!', phone: '+6590691148', address: '221 Balestier Rd, #01-10 Rocca Balestier,', postal_code: 329928, email: 'groomingsalon@gmail.com', description: 'Pets are our best friends, they too deserve special treatment. Let the professional pet groomers from Happy Pet Singapore make every grooming session a comfortable and pleasant experience for your fur kids', price: 150, image_url: 'https://placedog.net/200/300?id=53', home_service: true, aggressive_pets_accepted: true, created_at: 'now', updated_at: 'now', user_id: 2);
 business7.save
-business7 = Listing.new(name:  'Happy Pet Singapore', phone: '+6592232646', address: 'Indus Rd, #01-511 Block 77', postal_code: 160077, email: 'enquiry@happypetsingapore.com', description: 'Provides grooming and cleaning service for pets', price: 150, image_url: 'https://placedog.net/200/300?id=15', home_service: true, aggressive_pets_accepted: true, created_at: 'now', updated_at: 'now', user_id: 1);
-business7.save
 
+business8 = Listing.new(name:  'Happy Pet Singapore', phone: '+6592232646', address: 'Indus Rd, #01-511 Block 77', postal_code: 160077, email: 'enquiry@happypetsingapore.com', description: 'Provides grooming and cleaning service for pets', price: 150, image_url: 'https://placedog.net/200/300?id=15', home_service: true, aggressive_pets_accepted: true, created_at: 'now', updated_at: 'now', user_id: 1);
+business8.save
+
+customer1 = Customer.new(email: 'john@gmail.com', password: '123456', username:'John');
+customer1.save
+
+customer2 = Customer.new(email: 'amy@gmail.com', password: '123456', username:'Amy');
+customer2.save
+
+customer3 = Customer.new(email: 'tina@gmail.com', password: '123456', username:'Tina');
+customer3.save
