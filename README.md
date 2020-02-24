@@ -12,7 +12,7 @@ Problem Statement
 2. Groomers, especially smaller outfits, don't have a dedicated platform to showcase their services without spending
 
 Solution
-Kleenpets Pet Groomer Finder
+KleenPets Pet Groomer Finder
 In a single app, pet owners can view pet groomers and all the pertinent information (name, address, contact information, whether home services are provided, description of services, price) related to the groomers.
 Groomers can showcase their services to a select group of customers who are specifically looking for services that they provide.  Because customers can send contact groomers directly via email or phone, it can be a lead generation tool for groomers to build their businesses.
 
@@ -34,11 +34,19 @@ The following files are available in "pre-project-files":
 - User Flow
 
 A couple paragraphs about the general approach you took
+- We had a brainstorming session. We had an idea for this app. We listed the purpose of this app. We did the ERD, wireframes, user flow, user stories and listed the features that would address those user stories. We came up with a Google excel sheet listing all the tasks and updates for these tasks.
 
-Installation instructions for any dependencies
+
+Installation instructions for any dependencies:
+- bundle install
+- install pgsearch
+- install devise
+- install bootstrap form
+- install jquery-rails
+- install font-awesome-rails
+
 
 Descriptions of Unsolved Problems / Major Hurdles:
-- Resizing of images
 - Link to phone number only works on individual listing page, not on show all/index page
 - Results not shown for prices out of the range
 - Allow groomers to comment on reviews
