@@ -28,3 +28,4 @@ business7 = Listing.new(name:  'MAD About Grooming!', phone: '+6590691148', addr
 business7.save
 business7 = Listing.new(name:  'Happy Pet Singapore', phone: '+6592232646', address: 'Indus Rd, #01-511 Block 77', postal_code: 160077, email: 'enquiry@happypetsingapore.com', description: 'Provides grooming and cleaning service for pets', price: 150, image_url: 'https://placedog.net/200/300?id=15', home_service: true, aggressive_pets_accepted: true, created_at: 'now', updated_at: 'now', user_id: 1);
 business7.save
+
