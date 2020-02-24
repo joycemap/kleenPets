@@ -130,7 +130,7 @@ end
     if @listing.user == current_user
     @listing.destroy
     respond_to do |format|
-      format.html { redirect_to listings_url, notice: 'Listing was successfully deleteed.' }
+      format.html { redirect_to listings_url, notice: 'Listing was successfully deleted.' }
       format.json { head :no_content }
     end
   else
