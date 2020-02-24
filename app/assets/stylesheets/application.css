@@ -27,6 +27,7 @@
 }
 .fa {
     color: #cd4175;
+
 }
 .app-name {
     font-size: 18px;
@@ -37,6 +38,7 @@
 }
 .fa-paw {
     margin: 8px;
+    color: #cd4175;
 /*   cursor: pointer;*/
 }
 .navbar-brand {
