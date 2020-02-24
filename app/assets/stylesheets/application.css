@@ -129,13 +129,18 @@ input[type="search"] {
 }
 
 
+#seepetgroomers {
+    color: white;
+}
+
 .btn-secondary {
-    color: #fff;
+ /*   color: #fff;*/
     background-color: #57565f;
     border-color: #57565f;
     margin-left: 20px;
     float: left;
 }
+
 
 .col-lg-4 {
     border: 1px solid grey;
